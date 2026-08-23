@@ -1,22 +1,19 @@
 ---
 name: Velocity — Runcycl Design System
 colors:
-  # Core — Neutrals (gray scale)
+  # Core — Neutrals (shade-01…10)
   white: "#ffffff"
   black: "#000000"
-  gray-50: "#f9f9f9"
-  gray-100: "#f2f2f2"
-  gray-200: "#e5e5e5"
-  gray-300: "#c9c9c9"
-  gray-400: "#9e9e9e"
-  gray-500: "#6e6e6e"
-  gray-600: "#4e4e4e"
-  gray-700: "#363636"
-  gray-750: "#2e2e2e"
-  gray-800: "#242424"
-  gray-850: "#1a1a1a"
-  gray-900: "#141414"
-  gray-950: "#0d0d0d"
+  shade-01: "#141414"
+  shade-02: "#101010"
+  shade-03: "#191919"
+  shade-04: "#222222"
+  shade-05: "#4c4c4c"
+  shade-06: "#727272"
+  shade-07: "#7b7b7b"
+  shade-08: "#e2e2e2"
+  shade-09: "#f1f1f1"
+  shade-10: "#fdfdfd"
   # Core — Yellow (BRAND)
   yellow-50: "#f6ffd0"
   yellow-100: "#eaff99"
@@ -40,16 +37,16 @@ colors:
   blue-500: "#3b82f6"
   # Semantic — Background
   background-primary: "#ffffff"
-  background-secondary: "#f9f9f9"
-  background-tertiary: "#f2f2f2"
+  background-secondary: "#fdfdfd"
+  background-tertiary: "#f1f1f1"
   background-brand: "#d0f400"
-  background-inverse: "#0d0d0d"
+  background-inverse: "#101010"
   # Semantic — Surface (cards, panels, tinted feedback)
   surface-primary: "#ffffff"
-  surface-secondary: "#f9f9f9"
-  surface-tertiary: "#f2f2f2"
-  surface-hover: "#f2f2f2"
-  surface-active: "#e5e5e5"
+  surface-secondary: "#fdfdfd"
+  surface-tertiary: "#f1f1f1"
+  surface-hover: "#f1f1f1"
+  surface-active: "#e2e2e2"
   surface-elevated: "#ffffff"
   surface-overlay: "rgb(0 0 0 / 0.4)"
   surface-info: "rgb(59 130 246 / 0.10)"
@@ -63,17 +60,17 @@ colors:
   surface-error-emphasis: "rgb(239 68 68 / 0.15)"
   surface-brand-emphasis: "rgb(208 244 0 / 0.20)"
   # Semantic — Content (text / icon)
-  content-primary: "#0d0d0d"
-  content-secondary: "#4e4e4e"
-  content-tertiary: "#6e6e6e"
+  content-primary: "#101010"
+  content-secondary: "#4c4c4c"
+  content-tertiary: "#727272"
   content-brand: "#445200"
   content-inverse: "#ffffff"
-  content-disabled: "#9e9e9e"
-  content-on-brand: "#0d0d0d"
+  content-disabled: "#7b7b7b"
+  content-on-brand: "#101010"
   # Semantic — Border
-  border-default: "#e5e5e5"
-  border-subtle: "#f2f2f2"
-  border-strong: "#c9c9c9"
+  border-default: "#e2e2e2"
+  border-subtle: "#f1f1f1"
+  border-strong: "#e2e2e2"
   border-brand: "#d0f400"
   border-focus: "#d0f400"
   # Semantic — Accent (yellow tints)
@@ -151,8 +148,9 @@ rounded:
   DEFAULT: 0.25rem  # 4px — small inputs, dense UI
   md: 0.375rem      # 6px — Badge default
   lg: 0.5rem        # 8px — internal slots
-  xl: 0.75rem       # 12px — DEFAULT for controls (Button sm/md, Input, Card, Select, Combobox, NumberField, DatePicker)
+  xl: 0.75rem       # 12px — DEFAULT for controls (Button sm/md, Input, Select, Combobox, NumberField, DatePicker)
   2xl: 1rem         # 16px — Overlays (Dialog, Drawer, Popover, Toast) & Button lg
+  3xl: 1.5rem       # 24px — Card
   full: 9999px      # Chip, Avatar, pill Badge, NotificationBadge
 
 spacing:
@@ -175,10 +173,10 @@ spacing:
   card-padding-lg: 24px
 
 shadow:
-  sm: "0 1px 2px rgba(0,0,0,0.05)"
+  sm: "0px 5px 1.5px -4px #08080817, 0px 6px 4px -4px #0808080d"
   md: "0 4px 12px rgba(0,0,0,0.08)"
   lg: "0 8px 24px rgba(0,0,0,0.12)"
-  sm-dark: "0 1px 2px rgba(0,0,0,0.4)"
+  sm-dark: "0px 5px 1.5px -4px #08080817, 0px 6px 4px -4px #0808080d"
   md-dark: "0 4px 12px rgba(0,0,0,0.5)"
   lg-dark: "0 8px 24px rgba(0,0,0,0.6)"
 
@@ -202,7 +200,7 @@ components:
     backgroundColor: "{colors.yellow-400}"
     textColor: "{colors.content-on-brand}"
   button-neutral:
-    backgroundColor: "{colors.gray-700}"
+    backgroundColor: "{colors.shade-04}"
     textColor: "{colors.white}"
     typography: "{typography.caption}"
     rounded: "{rounded.xl}"
@@ -287,13 +285,13 @@ components:
     rounded: "{rounded.sm}"
     size: 20px
   switch:
-    backgroundColor: "{colors.gray-300}"
+    backgroundColor: "{colors.shade-08}"
     rounded: "{rounded.full}"
   switch-checked:
     backgroundColor: "{colors.brand-primary}"
   # --- DATA DISPLAY ---
   badge-default:
-    backgroundColor: "{colors.gray-100}"
+    backgroundColor: "{colors.shade-09}"
     textColor: "{colors.content-secondary}"
     typography: "{typography.caption}"
     rounded: "{rounded.md}"
@@ -348,19 +346,21 @@ components:
   card-default:
     backgroundColor: "{colors.surface-elevated}"
     textColor: "{colors.content-primary}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.3xl}"
     padding: "{spacing.card-padding-md}"
+    # no border — optional outline prop adds border-strong
   card-elevated:
     backgroundColor: "{colors.surface-elevated}"
     textColor: "{colors.content-primary}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.3xl}"
     padding: "{spacing.card-padding-md}"
-    # uses shadow-md
+    # shadow-md, no border
   card-muted:
     backgroundColor: "{colors.surface-secondary}"
     textColor: "{colors.content-primary}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.3xl}"
     padding: "{spacing.card-padding-md}"
+    # no border
   product-card:
     backgroundColor: "{colors.surface-elevated}"
     textColor: "{colors.content-primary}"
@@ -461,7 +461,7 @@ components:
 - **Personality**: active, clean, confident — the focused simplicity of athletic brands with the openness of a community-driven platform.
 - **Visual signature**: **chartreuse-lime yellow** `#d0f400` (`yellow-300`). Used sparingly: primary CTAs, active states, focus rings, highlights.
 - **Surface strategy**: neutral-dominant (~90% white / light grey). The brand yellow is an **accent**, never a large background fill.
-- **Language pairings**: white + near-black (`#0d0d0d`) carry the layout; the yellow carries the action.
+- **Language pairings**: white + near-black (`#101010`) carry the layout; the yellow carries the action.
 
 ## Typography
 
@@ -492,22 +492,22 @@ All text colours go through `content-*` tokens. Never pair Stack Sans Headline w
 The palette is **core** (raw hex) + **semantic** (role-based). Components always reference semantic tokens so dark mode adapts cleanly via `data-theme="dark"` on the root element.
 
 - **Yellow (brand)** — 11 steps, `yellow-300` (`#d0f400`) is the canonical brand signal. Light tints (`yellow-100` / `yellow-200`) are safe for hover states and accent fills; dark tints (`yellow-700` / `yellow-800`) are used for text on yellow surfaces via `content-brand`.
-- **Gray scale** — 14 steps from `gray-50` (`#f9f9f9`) to `gray-950` (`#0d0d0d`). Surfaces stack in thin layers: `surface-primary` (white) for elevated, `background-secondary` (`gray-50`) for page, `surface-tertiary` (`gray-100`) for muted blocks.
+- **Shade scale** — 10 steps `shade-01` (`#141414`) … `shade-10` (`#fdfdfd`); darkest UI ink is `shade-02` (`#101010`). Surfaces stack in thin layers: `surface-primary` (white) for elevated, `background-secondary` (`shade-10`) for page, `surface-tertiary` (`shade-09`) for muted blocks.
 - **State primitives** — green / orange / red / blue at 500 for full-saturation icons and text; their tinted counterparts (`surface-success`, `surface-warning`, `surface-error`, `surface-info`) apply the same hue at 10–15% alpha for fills. WCAG AA compliant.
-- **On-brand text** — when rendering text/icons on a yellow surface (`bg-brand-primary`, `bg-background-brand`), ALWAYS pair with `text-content-on-brand` (`#0d0d0d`). Never white text on yellow.
+- **On-brand text** — when rendering text/icons on a brand surface (`bg-brand-primary`, `bg-background-brand`), ALWAYS pair with `text-content-on-brand` (`#101010`). Never white text on brand yellow/mint.
 - **Focus ring** — yellow (`border-focus` = `yellow-300`) at 2px, on every interactive element.
 
 ### Semantic quick map
 
 | Role         | Token                    | Light value   | Dark value     |
 | ------------ | ------------------------ | ------------- | -------------- |
-| Page bg      | `background-primary`     | white         | `gray-950`     |
-| Section bg   | `background-secondary`   | `gray-50`     | `gray-900`     |
-| Card surface | `surface-elevated`       | white         | `gray-900`     |
-| Hover        | `surface-hover`          | `gray-100`    | `gray-800`     |
-| Text primary | `content-primary`        | `gray-950`    | white          |
-| Text muted   | `content-secondary`      | `gray-600`    | `gray-300`     |
-| Border       | `border-default`         | `gray-200`    | `gray-800`     |
+| Page bg      | `background-primary`     | white         | `shade-02`     |
+| Section bg   | `background-secondary`   | `shade-10`    | `shade-01`     |
+| Card surface | `surface-elevated`       | white         | `shade-01`     |
+| Hover        | `surface-hover`          | `shade-09`    | `shade-03`     |
+| Text primary | `content-primary`        | `shade-02`    | white          |
+| Text muted   | `content-secondary`      | `shade-05`    | `shade-08`     |
+| Border       | `border-default`         | `shade-08`    | `shade-03`     |
 | Brand fill   | `brand-primary`          | `yellow-300`  | `yellow-400`   |
 | Focus ring   | `border-focus`           | `yellow-300`  | `yellow-400`   |
 
@@ -527,11 +527,11 @@ Subtle elevation — this is a marketplace, not a dashboard. Three tokens only.
 
 | Token       | Value                             | Usage                                          |
 | ----------- | --------------------------------- | ---------------------------------------------- |
-| `shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)`      | Default cards, `ProductCard` at rest           |
+| `shadow-sm` | `0px 5px 1.5px -4px #08080817, 0px 6px 4px -4px #0808080d` | Default cards, `ProductCard` at rest           |
 | `shadow-md` | `0 4px 12px rgba(0,0,0,0.08)`     | Elevated cards, hovered `ProductCard`, Popover |
 | `shadow-lg` | `0 8px 24px rgba(0,0,0,0.12)`     | Dialog, Drawer, Toast                          |
 
-Product cards lift from `shadow-sm` → `shadow-md` on hover over `duration-normal` (200ms). Dark mode shadows intensify (0.4 / 0.5 / 0.6 opacity).
+Product cards lift from `shadow-sm` → `shadow-md` on hover over `duration-normal` (200ms).
 
 ## Shape (Radius)
 
@@ -540,8 +540,9 @@ Four meaningful tiers — each maps to a family of components.
 | Tier        | Value  | Token        | Components                                                                                          |
 | ----------- | ------ | ------------ | --------------------------------------------------------------------------------------------------- |
 | **Tag**     | 6px    | `rounded-md` | `Badge` (default), select options, tooltip                                                          |
-| **Control** | 12px   | `rounded-xl` | `Button` sm/md, `IconButton`, `Input`, `Textarea`, `Select`, `Combobox`, `NumberField`, `DatePicker`, `Card`, `Alert` |
+| **Control** | 12px   | `rounded-xl` | `Button` sm/md, `IconButton`, `Input`, `Textarea`, `Select`, `Combobox`, `NumberField`, `DatePicker`, `Alert` |
 | **Overlay** | 16px   | `rounded-2xl`| `Button` lg, `Dialog`, `Drawer`, `Popover`, `Toast`                                                 |
+| **Surface** | 24px   | `rounded-3xl`| `Card`                                                                                              |
 | **Pill**    | full   | `rounded-full`| `Chip` default, `Avatar`, `NotificationBadge`, pill-variant `Badge`, `Switch` track                |
 
 Critical rules:
@@ -550,7 +551,7 @@ Critical rules:
 - `Badge` default is `rounded-md` (not a pill). Pass `rounded` prop to switch to pill.
 - `Chip` is a pill by default — opposite of `Badge`.
 - Form inputs (`Input`, `Textarea`, `Select`, `Combobox`, `NumberField`, `DatePicker`) use `rounded-xl` at every size.
-- `Card` uses `rounded-xl` with `overflow-hidden` so images respect the radius. Nested images inherit — never add a separate radius on `<img>`.
+- `Card` uses `rounded-3xl` with `overflow-hidden` so images respect the radius. Nested images inherit — never add a separate radius on `<img>`.
 - On mobile, bottom `Drawer` uses `rounded-t-2xl` with no bottom radius.
 
 ## Motion
@@ -615,8 +616,8 @@ Every component is exported from the top-level `velocity-ds` entry point and bui
 
 Triggered by `data-theme="dark"` on `<html>` or `<body>`. All semantic tokens flip automatically:
 
-- Background: white → `gray-950`; surfaces step up in lightness to separate from page.
-- Content: `gray-950` → white; `content-on-brand` STAYS `gray-950` (yellow surfaces remain dark-text).
+- Background: white → `shade-02`; surfaces step up in lightness to separate from page.
+- Content: `shade-02` → white; `content-on-brand` STAYS `shade-02` (yellow surfaces remain dark-text).
 - Brand: `yellow-300` → `yellow-400` (slightly darker/more saturated for dark backgrounds).
 - Shadows: intensified to 0.4 / 0.5 / 0.6 opacity.
 
@@ -637,7 +638,7 @@ NEVER write `dark:` variants against raw hex. Use semantic tokens and the theme 
 **Don't**
 
 - Don't apply `bg-brand-primary` or `bg-background-brand` to large surfaces — yellow overwhelms.
-- Don't use raw Tailwind color scales (`bg-orange-500`, `text-gray-700`) in product code.
+- Don't use raw Tailwind color scales (`bg-orange-500`, `text-shade-04`) in product code.
 - Don't use fonts other than **Stack Sans Headline** (headings) and **Inter** (body/UI).
 - Don't stack two solid primary buttons in the same view.
 - Don't skip labels on form inputs — `aria-label` or `<FormLabel>` is mandatory.

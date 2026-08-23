@@ -170,21 +170,18 @@ export const SemanticColors: Story = {
 /** Full class names so Tailwind can emit CSS (no dynamic `bg-*-${step}`). */
 const PRIMITIVE_SWATCHES: { title: string; rows: { label: string; bg: string }[] }[] = [
   {
-    title: "Gray",
+    title: "Shade (neutrals)",
     rows: [
-      { label: "50", bg: "bg-gray-50" },
-      { label: "100", bg: "bg-gray-100" },
-      { label: "200", bg: "bg-gray-200" },
-      { label: "300", bg: "bg-gray-300" },
-      { label: "400", bg: "bg-gray-400" },
-      { label: "500", bg: "bg-gray-500" },
-      { label: "600", bg: "bg-gray-600" },
-      { label: "700", bg: "bg-gray-700" },
-      { label: "750", bg: "bg-gray-750" },
-      { label: "800", bg: "bg-gray-800" },
-      { label: "850", bg: "bg-gray-850" },
-      { label: "900", bg: "bg-gray-900" },
-      { label: "950", bg: "bg-gray-950" },
+      { label: "01", bg: "bg-shade-01" },
+      { label: "02", bg: "bg-shade-02" },
+      { label: "03", bg: "bg-shade-03" },
+      { label: "04", bg: "bg-shade-04" },
+      { label: "05", bg: "bg-shade-05" },
+      { label: "06", bg: "bg-shade-06" },
+      { label: "07", bg: "bg-shade-07" },
+      { label: "08", bg: "bg-shade-08" },
+      { label: "09", bg: "bg-shade-09" },
+      { label: "10", bg: "bg-shade-10" },
     ],
   },
   {
@@ -268,7 +265,7 @@ export const PrimitiveColors: Story = {
         <h2 className="text-heading-2 text-content-primary">Core scales</h2>
         <p className="mt-1 text-body text-content-secondary">
           Primitives from <code className="text-caption">tokens/core/color.json</code>. Classes like{" "}
-          <code className="text-caption">bg-gray-500</code>, <code className="text-caption">bg-primary-500</code>.
+          <code className="text-caption">bg-shade-05</code>, <code className="text-caption">bg-primary-500</code>.
         </p>
       </header>
 

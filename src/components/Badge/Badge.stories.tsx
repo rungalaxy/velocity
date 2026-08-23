@@ -9,7 +9,7 @@ const meta: Meta<typeof Badge> = {
     docs: {
       description: {
         component:
-          "A status tag component for labelling items — New, Sale, Out of stock, Best-seller, etc.",
+          "Status label for Active, New, Sale, etc. Soft tinted border + `text-caption` (matches design: `h-6 px-1.5 rounded-lg border capitalize`).",
       },
     },
   },
@@ -39,8 +39,8 @@ const meta: Meta<typeof Badge> = {
     },
   },
   args: {
-    children: "Badge",
-    variant: "default",
+    children: "Active",
+    variant: "success",
     size: "md",
     outline: false,
     rounded: false,
@@ -51,10 +51,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Default
-export const Default: Story = {};
+export const Default: Story = {
+  args: { variant: "default", children: "Default" },
+};
 
 // Variants
-export const Success: Story = { args: { variant: "success", children: "New" } };
+export const Success: Story = {
+  args: { variant: "success", children: "Active" },
+};
 export const Warning: Story = {
   args: { variant: "warning", children: "Low stock" },
 };
@@ -92,11 +96,11 @@ export const AllVariantsFilled: Story = {
   render: () => (
     <div className="flex flex-col gap-6 p-8 rounded-2xl bg-surface-primary">
       <span className="text-xs font-medium text-content-tertiary uppercase tracking-widest">
-        Filled
+        Soft (default)
       </span>
       <div className="flex items-center gap-3 flex-wrap">
         <Badge variant="default">Default</Badge>
-        <Badge variant="success">New</Badge>
+        <Badge variant="success">Active</Badge>
         <Badge variant="warning">Low stock</Badge>
         <Badge variant="error">Out of stock</Badge>
         <Badge variant="info">Pre-order</Badge>
@@ -164,7 +168,7 @@ export const Overview: Story = {
               {variant}
             </span>
             <div className="flex items-center gap-3 flex-wrap">
-              <Badge variant={variant}>Filled</Badge>
+              <Badge variant={variant}>Soft</Badge>
               <Badge variant={variant} outline>
                 Outline
               </Badge>

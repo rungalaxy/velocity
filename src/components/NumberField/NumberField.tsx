@@ -89,8 +89,8 @@ const sizeClasses: Record<
     icon: "size-4",
   },
   lg: {
-    group: "h-12 min-h-12",
-    text: "text-base tabular-nums",
+    group: "h-[48px] min-h-[48px]",
+    text: "text-sm tabular-nums",
     label: "text-sm",
     helper: "text-sm",
     btn: "min-w-12 px-0",
@@ -102,7 +102,7 @@ const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background-primary";
 
 const stepperBtn = [
-  "inline-flex shrink-0 items-center justify-center",
+  "inline-flex h-full self-stretch shrink-0 items-center justify-center",
   "border-border-default bg-surface-secondary text-content-primary",
   "cursor-pointer",
   fieldStepperButtonMotion,
@@ -146,7 +146,7 @@ export function NumberField({
   const sc = sizeClasses[size];
 
   const groupShell = [
-    "flex overflow-hidden rounded-xl border bg-surface-primary",
+    "flex items-center overflow-hidden rounded-full border bg-surface-primary",
     fieldShellTransition,
     fieldBorderClass(error),
     error ? fieldFocusWithinError : fieldFocusWithinDefault,
@@ -191,7 +191,8 @@ export function NumberField({
 
         <BaseNumberField.Input
           className={[
-            "min-w-0 flex-1 border-0 bg-transparent text-center",
+            "min-w-0 flex-1 self-center border-0 bg-transparent text-center appearance-none",
+            "leading-none py-0 -translate-y-px",
             "text-content-primary placeholder:text-content-tertiary",
             "outline-none",
             sc.text,

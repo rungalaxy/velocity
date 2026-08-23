@@ -23,7 +23,7 @@ export interface IconButtonProps
 const iconOnlyLayoutClasses: Record<ButtonSize, string> = {
   sm: "!gap-0 !px-0 !min-w-8 !w-8 !max-w-[2rem]",
   md: "!gap-0 !px-0 !min-w-10 !w-10 !max-w-[2.5rem]",
-  lg: "!gap-0 !px-0 !min-w-12 !w-12 !max-w-[3rem]",
+  lg: "!gap-0 !px-0 !h-[48px] !min-w-[48px] !w-[48px] !max-w-[48px]",
 };
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -44,6 +44,7 @@ export function IconButton({
   onClick,
   className,
   render,
+  ...props
 }: IconButtonProps) {
   return (
     <Button
@@ -58,6 +59,7 @@ export function IconButton({
       className={[iconOnlyLayoutClasses[size], className].filter(Boolean).join(" ")}
       startIcon={children}
       render={render}
+      {...props}
     >
       <span className="sr-only">{label}</span>
     </Button>

@@ -127,8 +127,8 @@ const sizeClasses: Record<
     icon: 'size-4',
   },
   lg: {
-    wrapper: 'h-12',
-    textSize: 'text-base',
+    wrapper: 'h-[48px]',
+    textSize: 'text-sm',
     paddingLeft: 'pl-4',
     label: 'text-sm',
     icon: 'size-5',
@@ -169,7 +169,7 @@ export function Combobox({
     'bg-surface-primary',
     'border',
     fieldBorderClass(error),
-    'rounded-xl',
+    'rounded-full',
     fieldShellTransition,
     error ? fieldFocusWithinError : fieldFocusWithinDefault,
     sc.wrapper,
@@ -180,7 +180,8 @@ export function Combobox({
     .join(' ');
 
   const inputClasses = [
-    'flex-1 h-full bg-transparent outline-none',
+    'flex-1 min-w-0 self-center bg-transparent outline-none appearance-none',
+    'leading-none py-0 -translate-y-px',
     'text-content-primary placeholder:text-content-tertiary',
     sc.textSize,
     sc.paddingLeft,

@@ -2,13 +2,15 @@ import * as React from "react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
-export type CardVariant = "default" | "elevated" | "outline" | "muted";
+export type CardVariant = "default" | "elevated" | "muted";
 
 export type CardSize = "sm" | "md" | "lg";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Background, border, and shadow */
+  /** Background and elevation */
   variant?: CardVariant;
+  /** Add a strong border around the card */
+  outline?: boolean;
   /** Padding for header / content / footer sections */
   size?: CardSize;
 }
@@ -28,7 +30,7 @@ export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
 export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Divider above the footer */
+  /** Divider above the footer (off by default) */
   separator?: boolean;
 }
 
@@ -47,10 +49,9 @@ function useCardContext() {
 // ── Style maps ─────────────────────────────────────────────────────────────
 
 const variantClasses: Record<CardVariant, string> = {
-  default: "border border-border-default bg-surface-primary",
-  elevated: "border border-border-default bg-surface-primary shadow-md",
-  outline: "border border-border-strong bg-transparent",
-  muted: "border border-border-default bg-surface-secondary",
+  default: "bg-surface-primary",
+  elevated: "bg-surface-primary shadow-md",
+  muted: "bg-surface-secondary",
 };
 
 const headerPadding: Record<CardSize, string> = {
@@ -81,11 +82,19 @@ const titleSize: Record<CardSize, string> = {
 // ── Card ───────────────────────────────────────────────────────────────────
 
 /**
- * Generic **card** container (grouped content with border / shadow).
+ * Generic **card** container (grouped content with optional border / shadow).
  * **Base UI** does not ship a Card primitive — native elements + Velocity tokens.
+ * Variants are borderless; pass `outline` for a strong border.
  */
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
-  { variant = "default", size = "md", className, children, ...props },
+  {
+    variant = "default",
+    outline = false,
+    size = "md",
+    className,
+    children,
+    ...props
+  },
   ref,
 ) {
   const ctx = React.useMemo(() => ({ size }), [size]);
@@ -95,9 +104,10 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
       <div
         ref={ref}
         className={[
-          "flex flex-col overflow-hidden rounded-xl",
+          "flex flex-col overflow-hidden rounded-4xl",
           "transition-shadow duration-200",
           variantClasses[variant],
+          outline ? "border border-border-strong" : "",
           className,
         ]
           .filter(Boolean)
@@ -211,7 +221,7 @@ CardContent.displayName = "CardContent";
 // ── CardFooter ─────────────────────────────────────────────────────────────
 
 export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
-  function CardFooter({ className, separator = true, ...props }, ref) {
+  function CardFooter({ className, separator = false, ...props }, ref) {
     const { size } = useCardContext();
     return (
       <div

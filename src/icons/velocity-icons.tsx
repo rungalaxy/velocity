@@ -24,6 +24,7 @@ import {
   Mail01Icon,
   Menu01Icon,
   MinusSignIcon,
+  MoonIcon as Moon01HugeIcon,
   Notification03Icon,
   Package01Icon,
   RunningShoesIcon,
@@ -37,6 +38,7 @@ import {
   SquareLock02Icon,
   StarIcon,
   Store01Icon,
+  Sun01Icon,
   Tag01Icon,
   Tick02Icon,
   UserIcon as User01Icon,
@@ -80,6 +82,7 @@ export const LockIcon = createIcon(SquareLock02Icon, "LockIcon");
 export const MailIcon = createIcon(Mail01Icon, "MailIcon");
 export const MapPinIcon = createIcon(Location01Icon, "MapPinIcon");
 export const MenuIcon = createIcon(Menu01Icon, "MenuIcon");
+export const MoonIcon = createIcon(Moon01HugeIcon, "MoonIcon");
 export const NotificationIcon = createIcon(
   Notification03Icon,
   "NotificationIcon",
@@ -103,6 +106,7 @@ export const StarFilledIcon = createIcon(StarIcon, "StarFilledIcon");
 export const StarOutlineIcon = createIcon(StarIcon, "StarOutlineIcon");
 export const StoreIcon = createIcon(Store01Icon, "StoreIcon");
 export const SubtractIcon = createIcon(MinusSignIcon, "SubtractIcon");
+export const SunIcon = createIcon(Sun01Icon, "SunIcon");
 export const TagIcon = createIcon(Tag01Icon, "TagIcon");
 export const TruckIcon = createIcon(DeliveryTruck01Icon, "TruckIcon");
 export const UploadCloudIcon = createIcon(CloudUploadIcon, "UploadCloudIcon");

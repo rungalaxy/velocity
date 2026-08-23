@@ -81,7 +81,7 @@ const variantColorClasses: Record<
   primary: {
     solid: primaryBrandSolidEffect,
     outline:
-      "border-2 bg-transparent text-content-primary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-accent-primary/20 active:bg-accent-primary/30 border border-border-brand",
+      "border bg-transparent text-content-primary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-accent-primary/20 active:bg-accent-primary/30 border-border-brand",
     ghost:
       "bg-transparent text-content-brand [@media(hover:hover)_and_(pointer:fine)]:hover:bg-accent-primary/20 active:bg-accent-primary/30",
     link: "bg-transparent text-content-brand [@media(hover:hover)_and_(pointer:fine)]:hover:text-content-on-brand underline-offset-4 [@media(hover:hover)_and_(pointer:fine)]:hover:underline motion-safe:active:scale-100",
@@ -92,7 +92,7 @@ const variantColorClasses: Record<
       "bg-state-success text-content-inverse shadow-sm",
     ].join(" "),
     outline:
-      "border-2 bg-transparent text-feedback-positive [@media(hover:hover)_and_(pointer:fine)]:hover:bg-green-100 active:bg-surface-active border border-state-success",
+      "border bg-transparent text-feedback-positive [@media(hover:hover)_and_(pointer:fine)]:hover:bg-green-100 active:bg-surface-active border-state-success",
     ghost:
       "bg-transparent text-feedback-positive [@media(hover:hover)_and_(pointer:fine)]:hover:bg-green-100 active:bg-surface-active",
     link: "bg-transparent text-feedback-positive [@media(hover:hover)_and_(pointer:fine)]:hover:text-green-400 underline-offset-4 [@media(hover:hover)_and_(pointer:fine)]:hover:underline motion-safe:active:scale-100",
@@ -103,7 +103,7 @@ const variantColorClasses: Record<
       "bg-state-warning text-content-inverse shadow-sm",
     ].join(" "),
     outline:
-      "border-2 bg-transparent text-feedback-caution [@media(hover:hover)_and_(pointer:fine)]:hover:bg-orange-100 active:bg-surface-active border border-state-warning",
+      "border bg-transparent text-feedback-caution [@media(hover:hover)_and_(pointer:fine)]:hover:bg-orange-100 active:bg-surface-active border-state-warning",
     ghost:
       "bg-transparent text-feedback-caution [@media(hover:hover)_and_(pointer:fine)]:hover:bg-orange-100 active:bg-surface-active",
     link: "bg-transparent text-feedback-caution [@media(hover:hover)_and_(pointer:fine)]:hover:text-orange-400 underline-offset-4 [@media(hover:hover)_and_(pointer:fine)]:hover:underline motion-safe:active:scale-100",
@@ -114,7 +114,7 @@ const variantColorClasses: Record<
       "bg-state-error text-content-inverse shadow-sm",
     ].join(" "),
     outline:
-      "border-2 bg-transparent text-feedback-negative [@media(hover:hover)_and_(pointer:fine)]:hover:bg-red-100 active:bg-surface-active border border-state-error",
+      "border bg-transparent text-feedback-negative [@media(hover:hover)_and_(pointer:fine)]:hover:bg-red-100 active:bg-surface-active border-state-error",
     ghost:
       "bg-transparent text-feedback-negative [@media(hover:hover)_and_(pointer:fine)]:hover:bg-red-100 active:bg-surface-active",
     link: "bg-transparent text-feedback-negative [@media(hover:hover)_and_(pointer:fine)]:hover:text-red-400 underline-offset-4 [@media(hover:hover)_and_(pointer:fine)]:hover:underline motion-safe:active:scale-100",
@@ -125,7 +125,7 @@ const variantColorClasses: Record<
       "bg-surface-secondary text-content-primary shadow-sm border border-border-default",
     ].join(" "),
     outline:
-      "border-2 bg-transparent text-content-secondary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-hover active:bg-surface-active border border-border-strong",
+      "border bg-transparent text-content-secondary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-hover active:bg-surface-active border-border-strong",
     ghost:
       "bg-transparent text-content-secondary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-hover active:bg-surface-active",
     link: "bg-transparent text-content-secondary [@media(hover:hover)_and_(pointer:fine)]:hover:text-content-primary underline-offset-4 [@media(hover:hover)_and_(pointer:fine)]:hover:underline motion-safe:active:scale-100",
@@ -133,9 +133,9 @@ const variantColorClasses: Record<
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "h-8 px-3 text-sm gap-1.5 rounded-xl",
-  md: "h-10 px-5 text-sm gap-2 rounded-xl",
-  lg: "h-12 px-6 text-base gap-2.5 rounded-2xl",
+  sm: "h-8 px-3 text-sm gap-1.5 rounded-full",
+  md: "h-10 px-5 text-sm gap-2 rounded-full",
+  lg: "h-[48px] px-6 text-sm gap-2.5 rounded-full",
 };
 
 function pressFeedbackClass(variant: ButtonVariant): string {

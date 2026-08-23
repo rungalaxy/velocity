@@ -45,7 +45,7 @@ export const Sizes: Story = {
 export const OnInverseSurface: Story = {
   name: "On inverse / brand bar",
   render: () => (
-    <div className="flex flex-col gap-6 rounded-2xl bg-gray-950 p-10">
+    <div className="flex flex-col gap-6 rounded-2xl bg-shade-02 p-10">
       <Logo variant="inverse" size="lg" />
       <p className="text-body-sm text-content-inverse/70">
         Use <code className="rounded bg-white/10 px-1">variant=&quot;inverse&quot;</code> on dark

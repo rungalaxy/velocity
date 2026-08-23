@@ -10,7 +10,7 @@ const meta: Meta<typeof NumberField> = {
     docs: {
       description: {
         component:
-          "Numeric field with increment/decrement steppers, built on [Base UI Number Field](https://base-ui.com/react/components/number-field). Optional **scrub area** (drag to adjust). Icons use [Remix Icon](https://remixicon.com/) (`react-icons/ri`).",
+          "Numeric field with increment/decrement steppers, built on [Base UI Number Field](https://base-ui.com/react/components/number-field). Optional **scrub area** (drag to adjust). Icons use [Hugeicons](https://hugeicons.com/) via `@velocity-ds/react` icons (`AddIcon`, `SubtractIcon`, `DragMoveIcon`).",
       },
     },
   },

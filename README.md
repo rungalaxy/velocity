@@ -71,6 +71,16 @@ import { coreColors, coreTypography, semanticTypography } from 'velocity-ds/toke
 
 The full set of CSS custom properties (semantic tokens) is exposed via `velocity-ds/styles`.
 
+### Brands
+
+Default brand is **Runcycl (Velocity)** (mint accent, Stack Sans Headline for headings). Switch to **Runticket** (black accent, Inter everywhere) with:
+
+```html
+<html data-brand="runticket">
+```
+
+Combine with dark mode: `data-theme="dark"` + `data-brand="runticket"`. Storybook exposes a Brand toolbar for the same switch.
+
 ### Semantic text styles (Tailwind)
 
 After importing Velocity styles, use composite typography utilities (font family + size + line-height + weight + tracking). **Headings** (`text-heading-1` … `4`) use **Stack Sans Headline**; body styles use **Inter** — load Stack Sans Headline in your app (e.g. [Google Fonts](https://fonts.google.com/specimen/Stack Sans Headline)) like the Storybook `preview.css` does.

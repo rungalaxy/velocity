@@ -122,7 +122,28 @@ const SEMANTIC_MAPPINGS: Mapping[] = [
 ];
 
 const DEFAULT_BRAND = 'velocity';
-const EXTRA_BRANDS = [] as const;
+const EXTRA_BRANDS = ['runticket'] as const;
+
+/** Per-brand font family overrides applied on `[data-brand="…"]`. */
+const BRAND_FONT_OVERRIDES: Record<
+  string,
+  { heading: string; stack: string }
+> = {
+  runticket: {
+    // Inter everywhere (including headings / font-stack)
+    heading: 'var(--font-sans)',
+    stack: 'var(--font-sans)',
+  },
+};
+
+function buildBrandFontOverrides(brand: string): string {
+  const fonts = BRAND_FONT_OVERRIDES[brand];
+  if (!fonts) return '';
+  return [
+    `  --font-heading: ${fonts.heading};`,
+    `  --font-stack: ${fonts.stack};`,
+  ].join('\n');
+}
 
 function buildSemanticMappings(brand: string): Mapping[] {
   return SEMANTIC_MAPPINGS.map(({ tokenPath, cssPrefix, label }) => ({
@@ -250,11 +271,24 @@ function buildThemeBlock(): string {
 // ── Build [data-theme="dark"] overrides ────────────────────────────────────────
 
 function buildDarkOverrides(brand = DEFAULT_BRAND): string {
-  return buildVariableBlock(darkTokens, buildSemanticMappings(brand), '  ');
+  const semantic = buildVariableBlock(
+    darkTokens,
+    buildSemanticMappings(brand),
+    '  ',
+  );
+  if (brand === DEFAULT_BRAND) return semantic;
+  const fonts = buildBrandFontOverrides(brand);
+  return [semantic, fonts].filter(Boolean).join('\n\n');
 }
 
 function buildBrandLightOverrides(brand: string): string {
-  return buildVariableBlock(lightTokens, buildSemanticMappings(brand), '  ');
+  const semantic = buildVariableBlock(
+    lightTokens,
+    buildSemanticMappings(brand),
+    '  ',
+  );
+  const fonts = buildBrandFontOverrides(brand);
+  return [semantic, fonts].filter(Boolean).join('\n\n');
 }
 
 // ── Compose CSS ───────────────────────────────────────────────────────────────

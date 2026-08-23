@@ -195,7 +195,8 @@ Container for grouped content.
 
 | Prop | Type | Default |
 | --- | --- | --- |
-| `variant` | `"elevated" \| "outlined" \| "ghost"` | `"elevated"` |
+| `variant` | `"default" \| "elevated" \| "muted"` | `"default"` |
+| `outline` | `boolean` | `false` |
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` |
 
 ## Example
@@ -219,7 +220,8 @@ Container for grouped content.
 ## Rules
 - ALWAYS use the compound parts. Do NOT render a single `<div>` styled like a card.
 - `CardTitle` is visual; if the card is a landmark, wrap it with proper semantics (`<article>`, `<section>`).
-- Use `variant="outlined"` in dense lists where shadows would stack visually.
+- Variants are borderless. Pass `outline` when you need a strong border.
+- `CardFooter` has no top separator by default.
 
 ---
 

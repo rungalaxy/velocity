@@ -61,13 +61,13 @@ const sizeClasses: Record<
     label: 'text-sm',
   },
   lg: {
-    wrapper: 'h-12',
-    textSize: 'text-base',
+    wrapper: 'h-[48px]',
+    textSize: 'text-sm',
     paddingLeft: 'pl-4',
     paddingRight: 'pr-4',
     iconWrapper: 'flex items-center justify-center w-12 h-full shrink-0',
     iconSize: 'h-5 w-5',
-    addon: 'px-3.5 text-base',
+    addon: 'px-3.5 text-sm',
     label: 'text-sm',
   },
 };
@@ -98,7 +98,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
     'bg-surface-primary',
     'border',
     fieldBorderClass(error),
-    'rounded-xl',
+    'rounded-full',
     fieldShellTransition,
     error ? fieldFocusWithinError : fieldFocusWithinDefault,
     sc.wrapper,
@@ -108,7 +108,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
     .join(' ');
 
   const inputClasses = [
-    'flex-1 h-full bg-transparent outline-none',
+    // No h-full: flex parent `items-center` centers a content-sized input.
+    // Inter sits optically low — nudge up 1px.
+    'flex-1 min-w-0 self-center bg-transparent outline-none appearance-none',
+    'leading-none py-0 -translate-y-px',
     'text-content-primary placeholder:text-content-tertiary',
     'disabled:cursor-not-allowed',
     sc.textSize,

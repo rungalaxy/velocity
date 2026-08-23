@@ -14,7 +14,7 @@ Never hardcode these in product code. They exist so that semantic tokens can ali
 | Scale | Base | Purpose |
 | --- | --- | --- |
 | `yellow-50..950` | `#d0f400` (yellow-300) | **Brand scale** — lime-yellow |
-| `gray-50..950` | — | Neutrals (includes `gray-750`, `gray-850`) |
+| `shade-01..10` | — | Neutrals (`#141414` … `#fdfdfd`) |
 | `primary-50..950` | `#fc4c02` (primary-500) | **Legacy orange**, no longer routed through semantic tokens |
 | `green-300/400/500/600` | — | Success feedback |
 | `orange-300/400/500/600` | — | Warning feedback |

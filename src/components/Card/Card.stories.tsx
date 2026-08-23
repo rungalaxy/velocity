@@ -17,7 +17,7 @@ const meta: Meta<typeof Card> = {
     docs: {
       description: {
         component:
-          "Generic card (header, content, footer). **Base UI** does not provide a Card primitive — native elements + Velocity tokens. See also **ProductCard** for product tiles.",
+          "Generic card (header, content, footer). **Base UI** does not provide a Card primitive — native elements + Velocity tokens. Variants are borderless; pass `outline` for a strong border. See also **ProductCard** for product tiles.",
       },
     },
   },
@@ -25,12 +25,14 @@ const meta: Meta<typeof Card> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "elevated", "outline", "muted"],
+      options: ["default", "elevated", "muted"],
     },
+    outline: { control: "boolean" },
     size: { control: "select", options: ["sm", "md", "lg"] },
   },
   args: {
     variant: "default",
+    outline: false,
     size: "md",
   },
 };
@@ -65,7 +67,7 @@ export const Default: Story = {
 export const Variants: Story = {
   render: () => (
     <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2">
-      {(["default", "elevated", "outline", "muted"] as const).map((variant) => (
+      {(["default", "elevated", "muted"] as const).map((variant) => (
         <Card key={variant} variant={variant}>
           <CardHeader separator>
             <CardTitle className="capitalize">{variant}</CardTitle>
@@ -78,6 +80,16 @@ export const Variants: Story = {
           </CardContent>
         </Card>
       ))}
+      <Card outline>
+        <CardHeader separator>
+          <CardTitle>Outline</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-body-sm text-content-secondary">
+            <code className="text-caption">outline</code> boolean prop.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   ),
   parameters: { layout: "padded" },

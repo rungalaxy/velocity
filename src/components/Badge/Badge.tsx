@@ -17,9 +17,9 @@ export interface BadgeProps {
   variant?: BadgeVariant;
   /** Size of the badge */
   size?: BadgeSize;
-  /** Render as outline instead of filled */
+  /** Render as outline (transparent fill) instead of soft tint */
   outline?: boolean;
-  /** Render with full pill shape instead of default rounded corners */
+  /** Render with full pill shape instead of default rounded-lg */
   rounded?: boolean;
   /** Badge content */
   children?: React.ReactNode;
@@ -28,29 +28,35 @@ export interface BadgeProps {
 }
 
 // ── Style maps ─────────────────────────────────────────────────────────────
+// Soft tinted labels — structure matches:
+// inline-flex items-center h-6 px-1.5 rounded-lg border text-caption leading-none capitalize label-*
 
-const filledVariantClasses: Record<BadgeVariant, string> = {
-  default: "bg-surface-secondary text-content-secondary",
-  success: "bg-state-success text-content-inverse ",
-  warning: "bg-state-warning text-content-inverse ",
-  error: "bg-state-error text-content-inverse ",
-  info: "bg-state-info text-content-inverse ",
-  brand: "bg-accent-primary text-content-primary",
+const softVariantClasses: Record<BadgeVariant, string> = {
+  default:
+    "bg-surface-secondary text-content-secondary border-border-default",
+  success:
+    "bg-surface-success text-feedback-positive border-state-success/40",
+  warning:
+    "bg-surface-warning text-feedback-caution border-state-warning/40",
+  error: "bg-surface-error text-feedback-negative border-state-error/40",
+  info: "bg-surface-info text-feedback-neutral border-state-info/40",
+  brand: "bg-surface-brand-tint text-content-brand border-border-brand",
 };
 
 const outlineVariantClasses: Record<BadgeVariant, string> = {
-  default: "bg-transparent text-content-secondary border border-border-strong",
-  success: "bg-transparent text-state-success border border-state-success",
-  warning: "bg-transparent text-state-warning border border-state-warning",
-  error: "bg-transparent text-state-error border border-state-error",
-  info: "bg-transparent text-state-info border border-state-info",
-  brand: "bg-transparent text-content-brand border border-border-brand",
+  default: "bg-transparent text-content-secondary border-border-strong",
+  success: "bg-transparent text-feedback-positive border-state-success",
+  warning: "bg-transparent text-feedback-caution border-state-warning",
+  error: "bg-transparent text-feedback-negative border-state-error",
+  info: "bg-transparent text-feedback-neutral border-state-info",
+  brand: "bg-transparent text-content-brand border-border-brand",
 };
 
+/** Default (md) matches the design: h-6 px-1.5 text-caption */
 const sizeClasses: Record<BadgeSize, string> = {
-  sm: "px-2 py-0.5 text-xs",
-  md: "px-2.5 py-0.5 text-xs",
-  lg: "px-3 py-1 text-sm",
+  sm: "h-5 px-1 text-overline",
+  md: "h-6 px-1.5 text-caption",
+  lg: "h-7 px-2 text-caption",
 };
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -66,13 +72,12 @@ export function Badge({
   return (
     <span
       className={[
-        "inline-flex items-center font-medium leading-none whitespace-nowrap py-1 px-0.5 font-semibold",
-        "transition-colors duration-[200ms]",
-        rounded ? "rounded-full" : "rounded-md",
+        "inline-flex items-center border leading-none capitalize whitespace-nowrap",
+        rounded ? "rounded-full" : "rounded-lg",
         sizeClasses[size],
         outline
           ? outlineVariantClasses[variant]
-          : filledVariantClasses[variant],
+          : softVariantClasses[variant],
         className,
       ]
         .filter(Boolean)

@@ -1,5 +1,11 @@
 # velocity-ds
 
+## 0.2.0
+
+### Minor Changes
+
+- 721b9c2: Shade neutrals, Runticket brand, Card outline prop, and Core 2.0 Sidebar (animated collapsibles, ghost trigger).
+
 ## 0.1.5
 
 ### Patch Changes

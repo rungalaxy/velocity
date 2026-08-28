@@ -293,7 +293,7 @@ export function ToastClose({ className }: ToastCloseProps) {
     <BaseToast.Close
       aria-label="Close toast"
       className={[
-        "flex-shrink-0 mt-0.5 p-1 rounded-lg",
+        "flex-shrink-0 mt-0.5 p-1 rounded-full",
         "text-content-tertiary",
         "transition-colors duration-[200ms]",
         "hover:text-content-primary hover:bg-surface-hover",

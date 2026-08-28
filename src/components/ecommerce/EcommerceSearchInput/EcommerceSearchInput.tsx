@@ -100,7 +100,7 @@ export const EcommerceSearchInput = React.forwardRef<
     <button
       type="button"
       onClick={handleClear}
-      className="flex size-full items-center justify-center rounded-md text-content-tertiary transition-colors hover:text-content-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
+      className="flex size-full items-center justify-center rounded-full text-content-tertiary transition-colors hover:text-content-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
       aria-label={clearLabel}
     >
       <CloseIcon className="size-full" aria-hidden />

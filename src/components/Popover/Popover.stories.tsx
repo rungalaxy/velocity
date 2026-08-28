@@ -204,7 +204,7 @@ export const ColorPicker: Story = {
               {swatches.map((s) => (
                 <button
                   key={s.name}
-                  className="flex flex-col items-center gap-1 rounded-lg p-2 cursor-pointer hover:bg-surface-hover transition-colors duration-[200ms]"
+                  className="flex flex-col items-center gap-1 rounded-full p-2 cursor-pointer hover:bg-surface-hover transition-colors duration-[200ms]"
                 >
                   <span
                     className="size-8 rounded-full border border-border-default"

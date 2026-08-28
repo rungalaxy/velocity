@@ -155,6 +155,14 @@ export type {
   TableCellProps,
 } from './components/Table';
 
+export { DataTable } from './components/DataTable';
+export type {
+  DataTableColumn,
+  DataTableColumnAlign,
+  DataTableProps,
+  DataTableSelectionMode,
+} from './components/DataTable';
+
 export { Rating } from './components/Rating';
 export type { RatingProps, RatingSize, RatingLabelPosition } from './components/Rating';
 

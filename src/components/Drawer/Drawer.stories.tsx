@@ -82,7 +82,7 @@ export const LeftSide: Story = {
                 <button
                   key={item}
                   type="button"
-                  className="rounded-lg px-3 py-2 text-left text-sm text-content-secondary transition-colors duration-[200ms] hover:bg-surface-hover hover:text-content-primary"
+                  className="rounded-full px-3 py-2 text-left text-sm text-content-secondary transition-colors duration-[200ms] hover:bg-surface-hover hover:text-content-primary"
                 >
                   {item}
                 </button>

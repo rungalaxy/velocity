@@ -735,7 +735,7 @@ export function SidebarMenuButton({
   const collapsedIconMode = useCollapsedIconMode();
 
   const buttonClasses = cx(
-    "peer/menu-button group/menu-button relative flex items-center overflow-hidden rounded-xl font-semibold outline-none transition-[width,height,padding,colors]",
+    "peer/menu-button group/menu-button relative flex items-center overflow-hidden rounded-full font-semibold outline-none transition-[width,height,padding,colors]",
     "disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50",
     "[&_svg]:size-6 [&_svg]:shrink-0",
     collapsedIconMode
@@ -921,7 +921,7 @@ export function SidebarMenuSubButton({
     ...props,
     render,
     className: cx(
-      "relative flex w-full min-w-0 items-center gap-3 overflow-hidden rounded-xl px-3 font-semibold outline-none transition-colors",
+      "relative flex w-full min-w-0 items-center gap-3 overflow-hidden rounded-full px-3 font-semibold outline-none transition-colors",
       "text-content-secondary hover:text-content-primary",
       "disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50",
       "[&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",

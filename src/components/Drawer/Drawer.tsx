@@ -244,7 +244,7 @@ export function DrawerClose({ children, className }: DrawerCloseProps) {
       className={[
         "absolute top-4 right-4",
         "inline-flex items-center justify-center",
-        "h-8 w-8 rounded-lg",
+        "h-8 w-8 rounded-full",
         "text-content-secondary bg-transparent",
         "cursor-pointer transition-colors duration-[200ms]",
         "hover:bg-surface-hover hover:text-content-primary",

@@ -198,7 +198,7 @@ export const MarketingBanner = React.forwardRef<
             onClick={handleDismiss}
             aria-label="Dismiss announcement"
             className={[
-              "-m-1 shrink-0 cursor-pointer rounded-lg p-1.5 transition-colors duration-150",
+              "-m-1 shrink-0 cursor-pointer rounded-full p-1.5 transition-colors duration-150",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2",
               variant === "brand"
                 ? "focus-visible:ring-white/60 focus-visible:ring-offset-accent-primary"

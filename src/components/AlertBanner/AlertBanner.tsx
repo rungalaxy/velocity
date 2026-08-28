@@ -158,7 +158,7 @@ export function AlertBanner({
           type="button"
           onClick={action.onClick}
           className={[
-            "shrink-0 text-sm font-medium px-3 py-1 rounded-lg",
+            "shrink-0 text-sm font-medium px-3 py-1 rounded-full",
             "cursor-pointer transition-colors duration-[200ms]",
             variantActionClasses[variant],
             "focus-visible:outline-none focus-visible:ring-2",
@@ -176,7 +176,7 @@ export function AlertBanner({
           onClick={handleDismiss}
           aria-label="Dismiss"
           className={[
-            "shrink-0 p-1 rounded-lg",
+            "shrink-0 p-1 rounded-full",
             "cursor-pointer transition-colors duration-[200ms]",
             "text-content-secondary hover:text-content-primary",
             "hover:bg-black/5 active:bg-black/10",

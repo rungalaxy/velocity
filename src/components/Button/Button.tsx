@@ -58,13 +58,14 @@ const solidGlassEffect = [
 ].join(" ");
 
 // Brand CTA — inset highlight, shine sweep on hover (fine pointer only).
+// Hover uses accent-secondary so black (Runticket) lifts to mid-gray instead of near-black /90.
 const primaryBrandSolidEffect = [
   "relative overflow-hidden font-semibold",
   "bg-accent-primary text-content-on-brand",
   "border-2 border-black/5",
   "shadow-[0_3px_2px_0_rgba(255,255,255,0.25)_inset]",
   "transition-[transform,background-color,box-shadow] duration-fast ease-standard",
-  "[@media(hover:hover)_and_(pointer:fine)]:hover:bg-accent-primary/90",
+  "[@media(hover:hover)_and_(pointer:fine)]:hover:bg-accent-secondary",
   "[@media(hover:hover)_and_(pointer:fine)]:hover:shadow-[0_3px_2px_0_rgba(255,255,255,0.3)_inset]",
   "active:bg-accent-primary/80",
   "before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit]",

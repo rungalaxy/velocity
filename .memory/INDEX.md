@@ -4,6 +4,7 @@ Add links when you create entries under `decision/`, `preference/`, `context/`, 
 
 ### Preferences
 
+- **2026-08-29** · Martin — [Brand solid button hover uses accent-secondary](./preference/2026-08-29-brand-button-hover.md)
 - **2026-08-29** · Martin — [Icon stroke default is 2](./preference/2026-08-29-icon-stroke-width.md)
 - **2026-08-23** · Martin — [Sidebar matches Core 2.0](./preference/2026-08-23-sidebar-core-2.md)
 - **2026-08-23** · Martin — [Card outline boolean, no footer separator](./preference/2026-08-23-card-no-outline-default-muted.md)

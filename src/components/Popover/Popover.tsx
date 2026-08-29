@@ -277,7 +277,7 @@ export function PopoverClose({ className, children }: PopoverCloseProps) {
       className={[
         "absolute top-3 right-3",
         "inline-flex items-center justify-center",
-        "size-7 rounded-lg",
+        "size-7 rounded-full",
         "text-content-secondary",
         "cursor-pointer",
         "transition-colors duration-[200ms]",

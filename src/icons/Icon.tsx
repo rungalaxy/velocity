@@ -11,7 +11,7 @@ export type VelocityIconProps = Omit<HugeiconsIconProps, "icon"> & {
 
 export type VelocityNamedIconProps = Omit<VelocityIconProps, "icon">;
 
-const DEFAULT_STROKE_WIDTH = 1.5;
+const DEFAULT_STROKE_WIDTH = 2;
 
 export function Icon({
   icon,

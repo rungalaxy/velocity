@@ -65,7 +65,7 @@ const filledVariantClasses: Record<ChipVariant, string> = {
   warning: "bg-state-warning text-content-primary",
   error: "bg-state-error text-content-primary",
   info: "bg-state-info text-content-primary",
-  brand: "bg-accent-primary text-content-primary",
+  brand: "bg-accent-primary text-content-on-brand",
 };
 
 const outlineVariantClasses: Record<ChipVariant, string> = {
@@ -92,7 +92,7 @@ const selectablePressedFilledClasses: Record<ChipVariant, string> = {
     "data-[pressed]:bg-state-error data-[pressed]:text-white data-[pressed]:border-state-error",
   info: "data-[pressed]:bg-state-info data-[pressed]:text-white data-[pressed]:border-state-info",
   brand:
-    "data-[pressed]:bg-accent-primary data-[pressed]:text-content-primary data-[pressed]:border-accent-primary",
+    "data-[pressed]:bg-accent-primary data-[pressed]:text-content-on-brand data-[pressed]:border-accent-primary",
 };
 
 const sizeClasses: Record<
@@ -149,7 +149,7 @@ const chipRemovePeerSurfaceClasses: Record<ChipVariant, string> = {
     "peer-data-[pressed]:hover:bg-state-info/86 peer-data-[pressed]:active:bg-state-info/76",
   brand:
     "bg-transparent text-content-brand hover:bg-content-brand/14 " +
-    "peer-data-[pressed]:bg-accent-primary peer-data-[pressed]:text-white " +
+    "peer-data-[pressed]:bg-accent-primary peer-data-[pressed]:text-content-on-brand " +
     "peer-data-[pressed]:hover:bg-accent-primary/86 peer-data-[pressed]:active:bg-accent-primary/76",
 };
 

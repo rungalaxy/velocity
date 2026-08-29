@@ -53,7 +53,7 @@ export const Default: Story = {
             button.
           </DialogDescription>
           <div className="mt-6 flex justify-end gap-3">
-            <DialogClose className="static top-auto right-auto size-auto rounded-xl px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
+            <DialogClose className="static top-auto right-auto size-auto rounded-full px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
               Cancel
             </DialogClose>
             <Button variant="solid" colorScheme="primary" size="md">
@@ -84,7 +84,7 @@ export const DeleteConfirmation: Story = {
             will be permanently removed.
           </DialogDescription>
           <div className="mt-6 flex justify-end gap-3">
-            <DialogClose className="static top-auto right-auto size-auto rounded-xl px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
+            <DialogClose className="static top-auto right-auto size-auto rounded-full px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
               Cancel
             </DialogClose>
             <Button variant="solid" colorScheme="danger" size="md">
@@ -213,7 +213,7 @@ export const Sizes: Story = {
                 This is a {size === 'sm' ? 'small' : size === 'md' ? 'medium' : 'large'} dialog popup ({size}).
               </DialogDescription>
               <div className="mt-6 flex justify-end">
-                <DialogClose className="static top-auto right-auto size-auto rounded-xl px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
+                <DialogClose className="static top-auto right-auto size-auto rounded-full px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
                   Close
                 </DialogClose>
               </div>
@@ -248,7 +248,7 @@ export const Overview: Story = {
                 Are you sure you want to proceed?
               </DialogDescription>
               <div className="mt-6 flex justify-end gap-3">
-                <DialogClose className="static top-auto right-auto size-auto rounded-xl px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
+                <DialogClose className="static top-auto right-auto size-auto rounded-full px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
                   Cancel
                 </DialogClose>
                 <Button variant="solid" colorScheme="primary" size="md">
@@ -272,7 +272,7 @@ export const Overview: Story = {
                 This cannot be undone.
               </DialogDescription>
               <div className="mt-6 flex justify-end gap-3">
-                <DialogClose className="static top-auto right-auto size-auto rounded-xl px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
+                <DialogClose className="static top-auto right-auto size-auto rounded-full px-4 py-2 text-sm font-medium text-content-secondary hover:bg-surface-hover transition-colors duration-[200ms] cursor-pointer">
                   Cancel
                 </DialogClose>
                 <Button variant="solid" colorScheme="danger" size="md">

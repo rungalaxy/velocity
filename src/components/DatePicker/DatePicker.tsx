@@ -186,7 +186,7 @@ const dayFocusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-border-focus";
 
 const navButtonClass = [
-  "inline-flex shrink-0 items-center justify-center rounded-lg",
+  "inline-flex shrink-0 items-center justify-center rounded-full",
   "bg-surface-secondary text-content-secondary",
   "transition-colors duration-200",
   "hover:bg-surface-hover hover:text-content-primary",
@@ -385,7 +385,7 @@ function CalendarGrid({
                     disabled={isDisabled}
                     onClick={() => onSelectDay(d)}
                     className={[
-                      "flex shrink-0 items-center justify-center rounded-lg",
+                      "flex shrink-0 items-center justify-center rounded-full",
                       sc.dayCell,
                       "tabular-nums",
                       sc.calText,

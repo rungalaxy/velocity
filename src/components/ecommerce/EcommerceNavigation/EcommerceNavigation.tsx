@@ -227,7 +227,7 @@ EcommerceNavigationMenuList.displayName = "EcommerceNavigationMenuList";
 export const EcommerceNavigationMenuItem = NM.Item;
 
 const triggerClass = [
-  "inline-flex h-10 items-center gap-2 rounded-xl px-4 text-sm font-medium",
+  "inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-medium",
   "text-content-primary outline-none transition-colors duration-200",
   "hover:bg-surface-hover active:bg-surface-active",
   "data-popup-open:bg-surface-secondary",

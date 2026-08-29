@@ -92,17 +92,17 @@ const sizeClasses: Record<
   { item: string; gap: string; icon: string }
 > = {
   sm: {
-    item: "h-8 min-w-8 px-2 text-xs rounded-lg",
+    item: "h-8 min-w-8 px-2 text-xs rounded-full",
     gap: "gap-1",
     icon: "h-3.5 w-3.5",
   },
   md: {
-    item: "h-9 min-w-9 px-3 text-sm rounded-xl",
+    item: "h-9 min-w-9 px-3 text-sm rounded-full",
     gap: "gap-1.5",
     icon: "h-4 w-4",
   },
   lg: {
-    item: "h-11 min-w-11 px-4 text-base rounded-xl",
+    item: "h-11 min-w-11 px-4 text-base rounded-full",
     gap: "gap-2",
     icon: "h-5 w-5",
   },

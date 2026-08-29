@@ -240,7 +240,7 @@ export function DialogClose({ className, children }: DialogCloseProps) {
       className={[
         'absolute top-4 right-4',
         'inline-flex items-center justify-center',
-        'size-8 rounded-xl',
+        'size-8 rounded-full',
         'text-content-secondary',
         'cursor-pointer',
         'transition-colors duration-[200ms]',

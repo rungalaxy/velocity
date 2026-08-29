@@ -56,7 +56,7 @@ function DefaultTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary border border-border-default transition-colors duration-[200ms] hover:bg-surface-hover cursor-pointer"
+      className="rounded-full bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary border border-border-default transition-colors duration-[200ms] hover:bg-surface-hover cursor-pointer"
       onClick={() =>
         add({
           title: "Item saved",
@@ -73,7 +73,7 @@ function SuccessTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-state-success px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-green-600 cursor-pointer"
+      className="rounded-full bg-state-success px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-green-600 cursor-pointer"
       onClick={() =>
         add<ToastData>({
           title: "Added to cart",
@@ -91,7 +91,7 @@ function WarningTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-state-warning px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-orange-600 cursor-pointer"
+      className="rounded-full bg-state-warning px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-orange-600 cursor-pointer"
       onClick={() =>
         add<ToastData>({
           title: "Low stock",
@@ -109,7 +109,7 @@ function ErrorTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-state-error px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-red-600 cursor-pointer"
+      className="rounded-full bg-state-error px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-red-600 cursor-pointer"
       onClick={() =>
         add<ToastData>({
           title: "Payment failed",
@@ -129,7 +129,7 @@ function InfoTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-state-info px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-blue-600 cursor-pointer"
+      className="rounded-full bg-state-info px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-blue-600 cursor-pointer"
       onClick={() =>
         add<ToastData>({
           title: "Shipping update",
@@ -147,7 +147,7 @@ function ActionTrigger() {
   const { add } = useToast();
   return (
     <button
-      className="rounded-xl bg-accent-primary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-primary-600 cursor-pointer"
+      className="rounded-full bg-accent-primary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-[200ms] hover:bg-primary-600 cursor-pointer"
       onClick={() =>
         add<ToastData>({
           title: "Item removed",

@@ -540,18 +540,18 @@ Four meaningful tiers — each maps to a family of components.
 | Tier        | Value  | Token        | Components                                                                                          |
 | ----------- | ------ | ------------ | --------------------------------------------------------------------------------------------------- |
 | **Tag**     | 6px    | `rounded-md` | `Badge` (default), select options, tooltip                                                          |
-| **Control** | 12px   | `rounded-xl` | `Button` sm/md, `IconButton`, `Input`, `Textarea`, `Select`, `Combobox`, `NumberField`, `DatePicker`, `Alert` |
-| **Overlay** | 16px   | `rounded-2xl`| `Button` lg, `Dialog`, `Drawer`, `Popover`, `Toast`                                                 |
-| **Surface** | 24px   | `rounded-3xl`| `Card`                                                                                              |
-| **Pill**    | full   | `rounded-full`| `Chip` default, `Avatar`, `NotificationBadge`, pill-variant `Badge`, `Switch` track                |
+| **Control** | 12px   | `rounded-xl` | `Textarea`, dropdown popovers, `SelectBox`, `Alert` surfaces                                        |
+| **Overlay** | 16px   | `rounded-2xl`| `Dialog`, `Drawer`, `Popover`, `Toast`                                                              |
+| **Surface** | 24px+  | `rounded-3xl` / `rounded-4xl` | `Card`                                                                                   |
+| **Pill**    | full   | `rounded-full`| `Button`, `IconButton`, field shells (`Input`, `Select`, `Combobox`, `NumberField`, `DatePicker`), close/dismiss controls, `Pagination`, `Chip`, `Avatar`, `NotificationBadge`, pill `Badge`, `Switch` track |
 
 Critical rules:
 
-- `Button` sm/md → `rounded-xl`. `Button` lg → `rounded-2xl`. NEVER `rounded-full` on a button.
+- All buttons and button-like controls use `rounded-full` (`Button`, `IconButton`, Pagination items, Dialog/Drawer/Toast/Popover close, banner dismiss/action, sidebar menu buttons).
 - `Badge` default is `rounded-md` (not a pill). Pass `rounded` prop to switch to pill.
 - `Chip` is a pill by default — opposite of `Badge`.
-- Form inputs (`Input`, `Textarea`, `Select`, `Combobox`, `NumberField`, `DatePicker`) use `rounded-xl` at every size.
-- `Card` uses `rounded-3xl` with `overflow-hidden` so images respect the radius. Nested images inherit — never add a separate radius on `<img>`.
+- Field shells (`Input`, `Select`, `Combobox`, `NumberField`, `DatePicker`) use `rounded-full`. `Textarea` and dropdown popovers stay `rounded-xl` / non-pill.
+- `Card` uses a large surface radius (`rounded-3xl` / `rounded-4xl`) with `overflow-hidden` so images respect the radius. Nested images inherit — never add a separate radius on `<img>`.
 - On mobile, bottom `Drawer` uses `rounded-t-2xl` with no bottom radius.
 
 ## Motion
@@ -575,10 +575,10 @@ Every component is exported from the top-level `velocity-ds` entry point and bui
 - **IconButton** — same variants/colors/sizes. `aria-label` REQUIRED.
 
 ### Inputs
-- **Input**, **Textarea**, **NumberField** — unified 40px height, `rounded-xl`, yellow focus ring, red ring on error.
+- **Input**, **Textarea**, **NumberField** — unified heights; field shells are `rounded-full` (`Textarea` stays non-pill), yellow focus ring, red ring on error.
 - **Select**, **Combobox**, **SelectBox** — `Select` for short lists, `Combobox` for searchable, `SelectBox` for card-grid picker (condition pickers, category selectors).
 - **Checkbox**, **RadioGroup**, **Switch** — `Switch` for instant state changes, `Checkbox` for multi-select in forms.
-- **DatePicker** — `rounded-xl`, Inter body font.
+- **DatePicker** — `rounded-full` trigger; Inter body font.
 - **Label**, **FileUpload**, **Rating**.
 
 ### Forms
@@ -629,7 +629,7 @@ NEVER write `dark:` variants against raw hex. Use semantic tokens and the theme 
 
 - Use semantic tokens (`bg-background-*`, `text-content-*`, `border-border-*`, `bg-surface-*`, `shadow-*`).
 - Use composite text utilities (`text-heading-1`, `text-body`, `text-caption`, `text-overline`) — they apply the right family + size + weight + tracking atomically.
-- Use `rounded-xl` as the default for any control; `rounded-2xl` only for overlays.
+- Use `rounded-full` for buttons and interactive controls; `rounded-xl` for textareas/popovers; `rounded-2xl` for overlays.
 - Use `button-lg` (48px) for the primary CTA on mobile to meet touch targets.
 - Apply `ring-2 ring-border-focus` on every focusable element.
 - Pair every `bg-brand-*` / `bg-background-brand` with `text-content-on-brand`.

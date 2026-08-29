@@ -464,7 +464,7 @@ export const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
                     type="button"
                     onClick={() => removeAt(index)}
                     className={[
-                      "inline-flex shrink-0 rounded-lg p-1",
+                      "inline-flex shrink-0 rounded-full p-1",
                       "text-content-tertiary transition-colors duration-fast ease-standard",
                       "[@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-hover [@media(hover:hover)_and_(pointer:fine)]:hover:text-content-primary",
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus",

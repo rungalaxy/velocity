@@ -177,7 +177,7 @@ function MobileLinkList({
           <a
             href={item.href}
             className={[
-              "block rounded-lg px-4 py-3.5 no-underline outline-none transition-colors",
+              "block rounded-full px-4 py-3.5 no-underline outline-none transition-colors",
               "hover:bg-surface-hover focus-visible:relative focus-visible:ring-2",
               "focus-visible:ring-border-focus focus-visible:ring-offset-2",
               "focus-visible:ring-offset-surface-primary",
@@ -209,7 +209,7 @@ const mobileSections = [
 type MobileSectionId = (typeof mobileSections)[number]["id"];
 
 const mobileRootRowClass = [
-  "flex w-full items-center justify-between gap-2 rounded-lg px-4 py-3.5 text-left text-sm font-medium",
+  "flex w-full items-center justify-between gap-2 rounded-full px-4 py-3.5 text-left text-sm font-medium",
   "text-content-primary no-underline outline-none transition-colors hover:bg-surface-hover",
   "focus-visible:relative focus-visible:ring-2 focus-visible:ring-border-focus",
   "focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary",
@@ -318,7 +318,7 @@ function MobileNavPanel() {
             <a
               href="#"
               className={[
-                "flex items-center rounded-lg px-4 py-3.5 text-sm font-medium text-content-brand",
+                "flex items-center rounded-full px-4 py-3.5 text-sm font-medium text-content-brand",
                 "no-underline outline-none transition-colors hover:bg-surface-hover",
                 "focus-visible:relative focus-visible:ring-2 focus-visible:ring-border-focus",
                 "focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary",
@@ -654,7 +654,7 @@ export const Default: Story = {
               <EcommerceNavigationMenuItem value="deals">
                 <EcommerceNavigationMenuLink
                   href="#"
-                  className="inline-flex h-10 items-center gap-2 rounded-xl px-4 text-sm font-medium text-content-brand"
+                  className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-medium text-content-brand"
                 >
                   Deals
                   <Badge variant="brand" size="md" className="ml-0">

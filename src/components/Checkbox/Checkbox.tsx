@@ -24,6 +24,10 @@ export interface CheckboxProps {
   name?: string;
   value?: string;
   required?: boolean;
+  /** Accessible name — required when no visible `children` label is provided */
+  "aria-label"?: string;
+  /** References the id of an element that labels the checkbox */
+  "aria-labelledby"?: string;
 }
 
 // ── Style maps ─────────────────────────────────────────────────────────────
@@ -66,6 +70,8 @@ export function Checkbox({
   name,
   value,
   required,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
 }: CheckboxProps) {
   const sizes = sizeClasses[size];
 
@@ -90,6 +96,8 @@ export function Checkbox({
         name={name}
         value={value}
         required={required}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         className={[
           "relative flex shrink-0 items-center justify-center",
           "border-2",
@@ -119,7 +127,7 @@ export function Checkbox({
           keepMounted
           className={[
             "flex items-center justify-center",
-            "text-content-primary",
+            "text-content-on-brand",
             "transition-[transform,opacity] duration-200",
             "data-unchecked:opacity-0 data-unchecked:scale-0",
             "data-starting-style:scale-0 data-ending-style:scale-0",

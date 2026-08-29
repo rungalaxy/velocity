@@ -1,5 +1,11 @@
 # velocity-ds
 
+## 0.3.0
+
+### Minor Changes
+
+- 7d583dc: Add DataTable with row selection, fix Checkbox contrast and aria labels, thicken default icon strokes, and align buttons/field shells to rounded-full.
+
 ## 0.2.0
 
 ### Minor Changes

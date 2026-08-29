@@ -1,5 +1,11 @@
 # velocity-ds
 
+## 0.3.1
+
+### Patch Changes
+
+- 1b9195d: Lighten primary button hover for Runticket (black brand) by using accent-secondary instead of near-black accent-primary/90.
+
 ## 0.3.0
 
 ### Minor Changes

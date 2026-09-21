@@ -212,6 +212,9 @@ export type { ToastVariant, ToastData, VelocityToastProviderProps, ToastViewport
 export { Dialog, DialogTrigger, DialogPortal, DialogBackdrop, DialogPopup, DialogTitle, DialogDescription, DialogClose } from './components/Dialog';
 export type { DialogProps, DialogSize, DialogTriggerProps, DialogPortalProps, DialogBackdropProps, DialogPopupProps, DialogTitleProps, DialogDescriptionProps, DialogCloseProps } from './components/Dialog';
 
+export { AlertDialog, AlertDialogTrigger, AlertDialogPortal, AlertDialogBackdrop, AlertDialogPopup, AlertDialogTitle, AlertDialogDescription, AlertDialogActions, AlertDialogClose, AlertDialogCancel, AlertDialogAction } from './components/AlertDialog';
+export type { AlertDialogProps, AlertDialogSize, AlertDialogActionIntent, AlertDialogTriggerProps, AlertDialogPortalProps, AlertDialogBackdropProps, AlertDialogPopupProps, AlertDialogTitleProps, AlertDialogDescriptionProps, AlertDialogActionsProps, AlertDialogCloseProps, AlertDialogCancelProps, AlertDialogActionProps } from './components/AlertDialog';
+
 export { Drawer, DrawerTrigger, DrawerPortal, DrawerBackdrop, DrawerPopup, DrawerTitle, DrawerDescription, DrawerClose } from './components/Drawer';
 export type { DrawerProps, DrawerSide, DrawerTriggerProps, DrawerPortalProps, DrawerBackdropProps, DrawerPopupProps, DrawerTitleProps, DrawerDescriptionProps, DrawerCloseProps } from './components/Drawer';
 

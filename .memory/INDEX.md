@@ -14,6 +14,7 @@ Add links when you create entries under `decision/`, `preference/`, `context/`, 
 
 ### Decisions
 
+- **2026-09-21** — [Alert dialog dismissal](./decision/2026-09-21-alert-dialog-dismissal.md)
 - **2026-08-23** · Martin — [Runticket brand theme](./decision/2026-08-23-runticket-brand.md)
 - **2026-08-22** · Martin — [Neutral palette is shade-01…10](./decision/2026-08-22-shade-neutral-palette.md)
 - **2026-08-12** · Martin — [Remove Runspot brand theme](./decision/2026-08-12-remove-runspot-brand.md)

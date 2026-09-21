@@ -47,6 +47,7 @@ E-commerce–specific UI lives under **`src/components/ecommerce/`** (e.g. `Prod
 |---|---|---|
 | `Toast` / `Snackbar` | `@base-ui-components/react/toast` | "Added to cart", payment error, confirmation |
 | `Dialog` / `Modal` | `@base-ui-components/react/dialog` | Delete confirmation, product preview, quick login |
+| ~~`AlertDialog`~~ ✅ | `@base-ui-components/react/alert-dialog` | Destructive confirm, unsaved changes, irreversible actions |
 | `Drawer` | `@base-ui-components/react/dialog` | Side cart, mobile filters |
 | `Tooltip` | `@base-ui-components/react/tooltip` | Price info bubble, form field help |
 | `Popover` | `@base-ui-components/react/popover` | Quick product preview, color/size picker |
